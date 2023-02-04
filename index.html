@@ -5,28 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div id="todo-list">
-  <h3>To-Do List</h3>
-  <input type="text" id="task-input">
-  <button id="add-task">Add Task</button>
-  <ul id="tasks"></ul>
-</div>
+  <div class="carousel">
+    <button class="carousel__button carousel__button--left is-hidden">
+      <img src="./angle-left-solid.svg" alt="">
+    </button>
+    <div class="carousel__track-container">
+      <ul class="carousel__track">
+        <li class="carousel__slide current-slide">
+          <img class="carousel__image" src="./home-image-6.jpg" alt="">
+        </li>
+        <li class="carousel__slide">
+          <img class="carousel__image" src="./home-image-7.jpg" alt="">
+        </li>
+        <li class="carousel__slide">
+          <img class="carousel__image" src="./home-image-8.jpg" alt="">
+        </li>
+      </ul>
+    </div>
+    <button class="carousel__button carousel__button--right">
+      <img src="./chevron-right-solid.svg" alt="">
+    </button>
 
+    <div class="carousel__nav">
+      <button class="carousel__indicator current-slide"></button>
+      <button class="carousel__indicator"></button>
+      <button class="carousel__indicator"></button>
+    </div>
+  </div>
 
-<script>
-    const taskInput = document.getElementById("task-input");
-const addTaskButton = document.getElementById("add-task");
-const tasksList = document.getElementById("tasks");
+  <script src="./carousel.js"></script>
+  
 
-addTaskButton.addEventListener("click", function() {
-  const task = taskInput.value;
-  const taskItem = document.createElement("li");
-  taskItem.innerHTML = task;
-  tasksList.appendChild(taskItem);
-});
-
-</script>
 </body>
 </html>
